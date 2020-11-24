@@ -13,7 +13,7 @@ export class UserComponent implements OnInit {
   constructor(
     private securityService: SecurityService,
     private router: Router
-  ) {
+  ){
   }
 
   ngOnInit(): void {

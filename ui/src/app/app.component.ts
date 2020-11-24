@@ -9,6 +9,7 @@ import { SettingsComponent } from './settings/settings/settings.component';
 })
 export class AppComponent {
 
+  loggedinUser$ = this.securityService.loggedinUser();
   shouldProtect = this.securityService.shouldProtect();
   securityEnabled = this.securityService.securityEnabled();
 
@@ -18,4 +19,5 @@ export class AppComponent {
   openSettings() {
     this.modalService.show(SettingsComponent);
   }
+  
 }

@@ -25,10 +25,12 @@ import { ROOT_REDUCERS, metaReducers } from './reducers/reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { SettingsService } from './settings/settings.service';
 import { AppsModule } from './apps/apps.module';
+import { QueriesComponent } from './queries/queries.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    QueriesComponent
   ],
   imports: [
     BrowserModule,

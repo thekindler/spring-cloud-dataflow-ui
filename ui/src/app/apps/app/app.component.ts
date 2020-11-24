@@ -7,6 +7,7 @@ import { UnregisterComponent } from '../unregister/unregister.component';
 import { NotificationService } from '../../shared/service/notification.service';
 import { VersionComponent } from '../version/version.component';
 import { HttpError } from '../../shared/model/error.model';
+import { SecurityService } from '../../security/service/security.service';
 
 @Component({
   selector: 'app-app',

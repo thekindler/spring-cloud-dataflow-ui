@@ -1,9 +1,9 @@
 <clr-vertical-nav *ngIf="!(shouldProtect|async)" [clrVerticalNavCollapsible]="true" [clr-nav-level]="1">
 
-<!--  <a clrVerticalNavLink routerLink="dashboard" routerLinkActive="active">-->
-<!--    <clr-icon shape="dashboard" clrVerticalNavIcon></clr-icon>-->
-<!--    Dashboard-->
-<!--  </a>-->
+ <a *ngIf="isAdminOrDashboardMonitor()" clrVerticalNavLink routerLink="dashboard" routerLinkActive="active">
+   <clr-icon shape="dashboard" clrVerticalNavIcon></clr-icon>
+   Dashboard
+ </a>
 
   <a clrVerticalNavLink routerLink="apps" routerLinkActive="active">
     <clr-icon shape="applications" class="is-solid" clrVerticalNavIcon></clr-icon>
@@ -16,22 +16,31 @@
     <clr-icon shape="cloud-scale" clrVerticalNavIcon></clr-icon>
     Streams
     <clr-vertical-nav-group-children>
-      <a
-        clrVerticalNavLink
-        routerLinkActive="active"
-        routerLink="streams/list">
-        Streams
-      </a>
-      <a
-        clrVerticalNavLink
-        routerLinkActive="active"
-        routerLink="streams/runtime">
-        Runtime
-      </a>
+      <div *ngIf="isAdminOrConfiguator()">
+        <a
+          clrVerticalNavLink
+          routerLinkActive="active"
+          routerLink="streams/list">
+          Streams
+        </a>
+      </div>
+        <a  *ngIf="isAdmin()"
+            clrVerticalNavLink
+            routerLinkActive="active"
+            routerLink="streams/runtime">
+          Runtime
+        </a>
     </clr-vertical-nav-group-children>
   </clr-vertical-nav-group>
 
-  <clr-vertical-nav-group routerLinkActive="active" clrVerticalNavGroupExpanded="true"
+  <div>
+    <a *ngIf="isAdminOrDashboardMonitor()" clrVerticalNavLink routerLink="queries" routerLinkActive="active">
+      <clr-icon shape="form" clrVerticalNavIcon></clr-icon>
+      Queries
+    </a>
+   </div>
+
+  <!-- <clr-vertical-nav-group routerLinkActive="active" clrVerticalNavGroupExpanded="true"
                           [appRole]="[]" appFeature="tasks">
     <clr-icon shape="blocks-group" clrVerticalNavIcon></clr-icon>
     Tasks / Jobs
@@ -63,9 +72,9 @@
         Schedules
       </a>
     </clr-vertical-nav-group-children>
-  </clr-vertical-nav-group>
+  </clr-vertical-nav-group> -->
 
-  <clr-vertical-nav-group routerLinkActive="active"
+  <!-- <clr-vertical-nav-group routerLinkActive="active"
                           clrVerticalNavGroupExpanded="false">
     <clr-icon shape="briefcase" clrVerticalNavIcon></clr-icon>
     Manage
@@ -85,6 +94,6 @@
         Import / Export
       </a>
     </clr-vertical-nav-group-children>
-  </clr-vertical-nav-group>
+  </clr-vertical-nav-group> -->
 
 </clr-vertical-nav>

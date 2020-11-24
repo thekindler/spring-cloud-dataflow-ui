@@ -1,4 +1,5 @@
-<h1 class="page-title-actions">
+<div *ngIf="isAdmin()">
+<h1  class="page-title-actions">
   Applications
   <span class="actions">
     <button id="btnAddApplications" type="button" class="btn btn-sm btn-primary" (click)="add()"
@@ -105,3 +106,4 @@
 
 <app-version #versionModal (onChange)="refresh(state)"></app-version>
 <app-unregister #unregisterModal (onUnregistered)="refresh(state)"></app-unregister>
+</div>
