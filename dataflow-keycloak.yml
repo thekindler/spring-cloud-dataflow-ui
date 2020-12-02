@@ -1,0 +1,52 @@
+spring:
+  cloud:
+    dataflow:
+      security:
+        authorization:
+          provider-role-mappings:
+            keycloak:
+              map-oauth-scopes: true
+              role-mappings:
+                ROLE_VIEW: dataflow.view
+                ROLE_CREATE: dataflow.create
+                ROLE_MANAGE: dataflow.manage
+                ROLE_DEPLOY: dataflow.create
+                ROLE_DESTROY: dataflow.create
+                ROLE_MODIFY: dataflow.create
+                ROLE_SCHEDULE: dataflow.create
+                # ROLE_ADMIN: dataflow.admin 
+                # ROLE_CONFIGURATOR: dataflow.configurator 
+                # ROLE_MONITOR: dataflow.monitor
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
+            authorization-grant-type: authorization_code
+            client-id: dataflow
+            client-secret: 99af3dd1-4420-4d05-b3ef-1f17269929ad
+            scope:
+              - openid
+              - dataflow.view
+              - dataflow.deploy
+              - dataflow.destroy
+              - dataflow.manage
+              - dataflow.modify
+              - dataflow.schedule
+              - dataflow.create
+        provider:
+          keycloak:
+            jwk-set-uri: http://localhost:8080/auth/realms/dataflow/protocol/openid-connect/certs
+            token-uri: http://localhost:8080/auth/realms/dataflow/protocol/openid-connect/token
+            user-info-uri: http://localhost:8080/auth/realms/dataflow/protocol/openid-connect/userinfo
+            user-name-attribute: user_name
+            authorization-uri: http://localhost:8080/auth/realms/dataflow/protocol/openid-connect/auth
+      resourceserver:
+        opaquetoken:
+          introspection-uri: http://localhost:8080/auth/realms/dataflow/protocol/openid-connect/token/introspect
+          client-id: dataflow
+          client-secret: 99af3dd1-4420-4d05-b3ef-1f17269929ad
+      authorization:
+        check-token-access: isAuthenticated()
+
