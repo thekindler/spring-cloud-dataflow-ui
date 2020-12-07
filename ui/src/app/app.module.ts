@@ -26,6 +26,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { SettingsService } from './settings/settings.service';
 import { AppsModule } from './apps/apps.module';
 import { QueriesComponent } from './queries/queries.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { QueriesComponent } from './queries/queries.component';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     ClarityModule,
     BrowserAnimationsModule,

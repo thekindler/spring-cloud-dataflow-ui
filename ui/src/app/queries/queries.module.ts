@@ -22,5 +22,5 @@ import { QueriesRoutingModule } from '../queries/queries-routing-module'
   ],
   providers: []
 })
-export class DashboardModule {
+export class QueriesModule {
 }

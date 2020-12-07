@@ -12,12 +12,15 @@ import { StatusComponent } from './status/status.component';
 import { DatagridComponent } from '../../shared/component/datagrid/datagrid.component';
 import { ContextService } from '../../shared/service/context.service';
 import { SettingsService } from '../../settings/settings.service';
+// import { SecurityService } from '../../security/service/security.service';
 
 @Component({
   selector: 'app-streams-list',
   templateUrl: './streams.component.html',
 })
 export class StreamsComponent extends DatagridComponent implements OnDestroy, OnInit {
+
+  // loggedinUser$ = this.securityService.loggedinUser();
   page: StreamPage;
   expanded: {};
   @ViewChild('destroyModal', { static: true }) destroyModal: DestroyComponent;
@@ -38,6 +41,7 @@ export class StreamsComponent extends DatagridComponent implements OnDestroy, On
 
   ngOnInit(): void {
     this.expanded = { ...this.context['expanded'] || {} };
+    // this.isAdmin();
   }
 
   ngOnDestroy(): void {
@@ -49,6 +53,7 @@ export class StreamsComponent extends DatagridComponent implements OnDestroy, On
     }
     super.ngOnDestroy();
   }
+
 
   refresh(state: ClrDatagridStateInterface) {
     if (this.isReady()) {

@@ -2,14 +2,15 @@
   <clr-header class="header header-7">
     <div class="branding">
       <a routerLink="/" class="logo-and-title">
-        <span class="title">Infosys </span>
-        <span> | Surveillance Platform</span>
+        <span class="title" style="font-weight: bolder;padding-right: 0.3rem;
+        font-size: large;">Infosys </span>
+        <span style="color: white;"> | Surveillance Platform</span>
       </a>
     </div>
-    <app-search></app-search>
+    <!--    <app-search></app-search>-->
     <div class="header-actions">
       <a (click)="openSettings()" style="cursor:pointer" class="nav-link nav-icon" aria-label="settings">
-        <!-- <clr-icon shape="cog"></clr-icon> -->
+        <clr-icon shape="cog"></clr-icon>
       </a>
       <span class="divider"></span>
       <div *ngIf="securityEnabled|async">
@@ -18,7 +19,7 @@
             Log In
           </a>
         </div>
-        
+
         <div *ngIf="(loggedinUser$|async) as user" class="header-actions">
           <clr-dropdown>
             <button class="nav-text nav-icon-text" clrDropdownTrigger aria-label="open user profile">
@@ -26,7 +27,7 @@
               <clr-icon shape="caret down"></clr-icon>
             </button>
             <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
-              <a (click)="logout()" clrDropdownItem>Log out</a>
+              <a href="/logout" clrDropdownItem>Log out</a>
             </clr-dropdown-menu>
           </clr-dropdown>
         </div>

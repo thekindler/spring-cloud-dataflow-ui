@@ -19,5 +19,7 @@ export class AppComponent {
   openSettings() {
     this.modalService.show(SettingsComponent);
   }
-  
+  // logout(){
+  //   this.securityService.logout()
+  // }
 }

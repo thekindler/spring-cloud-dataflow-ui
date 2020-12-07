@@ -46,7 +46,7 @@ export class AppsComponent extends DatagridComponent implements OnInit {
 
     let user:String;
     this.loggedinUser$.subscribe(data=>{user=data}) 
-    console.log("in app component" ,user==="admin")
+    console.log("in apps component" ,user==="admin")
   
     if (user==="admin")
       return true

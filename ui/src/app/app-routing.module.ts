@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { DevGuard } from './shared/support/dev.guard';
 import { SecurityGuard } from '../app/security/support/security.guard';
 import { DashboardComponent } from '../app/dashboard/dashboard/dashboard.component'
+import { QueriesComponent } from './queries/queries.component';
+
 
 const routes: Routes = [
   {
@@ -22,7 +24,7 @@ const routes: Routes = [
     {
       path: 'queries',
       canActivate: [SecurityGuard],
-      component: DashboardComponent,
+      component: QueriesComponent,
       data: {
         authenticate: true,
         roles: ['ROLE_VIEW']

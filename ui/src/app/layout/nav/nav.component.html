@@ -1,34 +1,34 @@
 <clr-vertical-nav *ngIf="!(shouldProtect|async)" [clrVerticalNavCollapsible]="true" [clr-nav-level]="1">
 
- <a *ngIf="isAdminOrDashboardMonitor()" clrVerticalNavLink routerLink="dashboard" routerLinkActive="active">
+ <a *ngIf="isAdminOrDashboardMonitor()"  clrVerticalNavLink routerLink="dashboard" routerLinkActive="active">
    <clr-icon shape="dashboard" clrVerticalNavIcon></clr-icon>
-   Dashboard
+   <span class="font-size-smaller"> Dashboard </span>
  </a>
 
-  <a clrVerticalNavLink routerLink="apps" routerLinkActive="active">
+  <a *ngIf="isAdmin()" clrVerticalNavLink routerLink="apps" routerLinkActive="active">
     <clr-icon shape="applications" class="is-solid" clrVerticalNavIcon></clr-icon>
-    Applications
+    <span class="font-size-smaller"> Applications </span>
   </a>
 
   <clr-vertical-nav-group routerLinkActive="active"
                           clrVerticalNavGroupExpanded="true"
                           [appRole]="[]" appFeature="streams">
     <clr-icon shape="cloud-scale" clrVerticalNavIcon></clr-icon>
-    Streams
+    <span class="font-size-smaller"> Streams </span>
     <clr-vertical-nav-group-children>
       <div *ngIf="isAdminOrConfiguator()">
         <a
           clrVerticalNavLink
           routerLinkActive="active"
           routerLink="streams/list">
-          Streams
+          <span class="font-size-smaller"> Streams </span>
         </a>
       </div>
         <a  *ngIf="isAdmin()"
             clrVerticalNavLink
             routerLinkActive="active"
             routerLink="streams/runtime">
-          Runtime
+            <span class="font-size-smaller"> Runtime </span>
         </a>
     </clr-vertical-nav-group-children>
   </clr-vertical-nav-group>
@@ -36,7 +36,7 @@
   <div>
     <a *ngIf="isAdminOrDashboardMonitor()" clrVerticalNavLink routerLink="queries" routerLinkActive="active">
       <clr-icon shape="form" clrVerticalNavIcon></clr-icon>
-      Queries
+      <span class="font-size-smaller"> Queries </span>
     </a>
    </div>
 

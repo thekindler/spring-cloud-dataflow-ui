@@ -2,12 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClarityModule } from '@clr/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SecurityModule } from '../security/security.module';
-import { SharedModule } from '../shared/shared.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { SecurityModule } from '../../security/security.module';
+import { SharedModule } from '../../shared/shared.module';
+import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-router.module';
-
-
+  
 @NgModule({
   declarations: [
     DashboardComponent
