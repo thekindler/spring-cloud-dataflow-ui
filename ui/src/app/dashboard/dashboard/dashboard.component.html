@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
 <body>
 <div class="container-fluid">
-  <div class="style1">
+  <div >
     <form action="" (submit)="goto()">
       <div class="form-group">
-        <label for="country" class="form-label">Country :</label>
+        <!-- <label for="country" class="form-label label-color">Country :</label> -->
         <select name="country" id="country" (change)="getstates($event)" required class="form-control">
           <option value="">select country</option>
           <option value="India">India</option>
@@ -21,27 +14,37 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="State">State :</label>
+        <!-- <label for="State">State :</label> -->
 
         <select name="State" id="State" required class="form-control" (change)="getcities($event)">
-          <option value="">Select state</option>
-          <option value="{{state}}" *ngFor="let state of states">{{state}}</option>
+          <option value="">select state</option>
+          <!-- <option value="{{state}}" *ngFor="let state of states">{{state}}</option> -->
+          <option value="Delhi">Delhi</option>
+          <option value="Karnataka">Karnataka</option>
+          <option value="Kerela">Kerela</option>
         </select>
       </div>
       <div class="form-group">
-        <label for="City">City :</label>
+        <!-- <label for="City">City :</label> -->
 
         <select name="City" id="City" required class="form-control" (change)="setcity($event)">
-          <option value="">Select city</option>
-          <option value="{{state}}" *ngFor="let city of cities">{{city}}</option>
+          <option value="">select city</option>
+          <!-- <option value="{{state}}" *ngFor="let city of cities">{{city}}</option> -->
+          <option value="Bangalore">Bangalore</option>
         </select>
       </div>
       <div class="form-group">
-        <label for="locationid" class="form-label">Location Id :</label>
-        <input type="text" id="locationid" class="form-control" required>
+        <!-- <label for="locationid" class="form-label">Location Id :</label> -->
+        <select name="City" id="locationId" required class="form-control" >
+          <option value="">select locationId</option>
+          <!-- <option value="{{state}}" *ngFor="let city of cities">{{city}}</option> -->
+          <option value="INFYBLR1">INFYBLR1</option>
+          <option value="INFYBLR2">INFYBLR2</option>
+          <option value="INFYBLR3">INFYBLR3</option>
+        </select>
       </div>
       <div class="form-group">
-<!--        <input type="submit" class="btn btn-primary btn1 form-control">-->
+       <input type="submit" style="width: fit-content;" class="btn btn-primary submitButton form-control">
       </div>
     </form>
   </div>

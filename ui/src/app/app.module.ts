@@ -27,6 +27,7 @@ import { SettingsService } from './settings/settings.service';
 import { AppsModule } from './apps/apps.module';
 import { QueriesComponent } from './queries/queries.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatGridListModule } from '@angular/material/grid-list'
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    MatGridListModule,
     ReactiveFormsModule,
     AppRoutingModule,
     ClarityModule,
@@ -44,7 +46,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     LayoutModule,
-    // DashboardModule,
     // DevModule,
     StreamsModule,
     TasksJobsModule,

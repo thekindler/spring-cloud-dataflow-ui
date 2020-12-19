@@ -4,6 +4,8 @@ import { DevGuard } from './shared/support/dev.guard';
 import { SecurityGuard } from '../app/security/support/security.guard';
 import { DashboardComponent } from '../app/dashboard/dashboard/dashboard.component'
 import { QueriesComponent } from './queries/queries.component';
+import { FeedComponent } from './feed/feed.component'
+
 
 
 const routes: Routes = [
@@ -29,7 +31,12 @@ const routes: Routes = [
         authenticate: true,
         roles: ['ROLE_VIEW']
      }
-    }
+    },
+    { 
+       path:"feed",
+       component:FeedComponent,
+       pathMatch:"full"
+     }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes, { useHash: true })],

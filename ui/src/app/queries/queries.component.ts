@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-queries',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QueriesComponent implements OnInit {
 
-  constructor() { }
+  title = 'dropdown';
+  data:any;
+ constructor(private dataService: DataService){
 
-  ngOnInit(): void {
-  }
+ }
+ ngOnInit(){
+   this.dataService.getData().subscribe((data)=>{this.data=data})
+ }
 
 }

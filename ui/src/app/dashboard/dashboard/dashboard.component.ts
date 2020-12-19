@@ -96,8 +96,8 @@ constructor(private router: Router ) { }
     // )
   }
 goto(){
-  console.log("inside submit");
-  this.router.navigate(['/register'])
+  console.log("after submit");
+  this.router.navigate(['/feed'])
 }
 }
 
