@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from './layout/layout.module';
 import { FormsModule } from '@angular/forms';
@@ -27,7 +29,8 @@ import { SettingsService } from './settings/settings.service';
 import { AppsModule } from './apps/apps.module';
 import { QueriesComponent } from './queries/queries.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatGridListModule } from '@angular/material/grid-list'
+import { MatGridListModule } from '@angular/material/grid-list';
+
 
 @NgModule({
   declarations: [
@@ -41,6 +44,8 @@ import { MatGridListModule } from '@angular/material/grid-list'
     AppRoutingModule,
     ClarityModule,
     BrowserAnimationsModule,
+    MatSelectModule,
+    MatInputModule,
     SharedModule,
     AboutModule,
     HttpClientModule,

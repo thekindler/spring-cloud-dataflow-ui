@@ -14,7 +14,7 @@ export class QueriesComponent implements OnInit {
 
  }
  ngOnInit(){
-   this.dataService.getData().subscribe((data)=>{this.data=data})
+   this.dataService.getData().subscribe((data)=>{this.data=data;console.log(data)})
  }
 
 }

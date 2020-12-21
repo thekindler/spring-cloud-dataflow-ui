@@ -17,7 +17,8 @@
     "mavenbuild-tests": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng test --code-coverage true --watch false --browsers ChromeCustom",
     "mavenbuild-without-tests": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build --prod --output-path ./../target/classes/public/dashboard --base-href /dashboard/",
     "mavenbuild": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng test --code-coverage true --watch false --browsers ChromeHeadless && --max_old_space_size=4096 node ./node_modules/@angular/cli/bin/ng build --prod --output-path ./../target/classes/public/dashboard --base-href /dashboard/",
-    "bundle-report": "webpack-bundle-analyzer dist/stats.json"
+    "bundle-report": "webpack-bundle-analyzer dist/stats.json",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
