@@ -1,0 +1,45 @@
+<mat-icon>arrow_back</mat-icon>
+<div class="c">
+   
+    <mat-form-field  class="margin" appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker1">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+  
+
+    <ol>
+        <li> <span class="margin">Number Of 
+            <span><mat-form-field appearance="fill">
+                <mat-label>Select Type</mat-label>
+                <mat-select>
+                    <mat-option >Car </mat-option>
+                    <mat-option >Truck </mat-option>
+                </mat-select>
+                </mat-form-field>
+            
+            </span> 
+
+            <span><mat-form-field appearance="fill">
+                <mat-label>Select Color</mat-label>
+                <mat-select>
+                   
+                </mat-select>
+                </mat-form-field>
+            
+            </span> 
+        </span></li>
+       
+    </ol>
+    
+    
+</div>
+
+  
+
+
+
+
+
+

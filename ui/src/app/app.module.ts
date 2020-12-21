@@ -30,12 +30,20 @@ import { AppsModule } from './apps/apps.module';
 import { QueriesComponent } from './queries/queries.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';
+import {MatButtonModule} from '@angular/material/button';
+import { LicencePlateComponent } from './licence-plate/licence-plate.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatIconModule} from '@angular/material/icon';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    QueriesComponent
+    QueriesComponent,
+    LicencePlateComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +54,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
     BrowserAnimationsModule,
     MatSelectModule,
     MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatIconModule,
     SharedModule,
     AboutModule,
     HttpClientModule,

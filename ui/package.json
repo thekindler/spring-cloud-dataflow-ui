@@ -47,7 +47,6 @@
     "lodash.get": "4.4.2",
     "lodash.set": "4.3.2",
     "luxon": "1.23.0",
-    "mat-video": "^2.8.1",
     "ngx-bootstrap": "^6.2.0",
     "ngx-toastr": "12.0.1",
     "rxjs": "6.5.4",
