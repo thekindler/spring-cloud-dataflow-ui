@@ -15,4 +15,5 @@ export class LicencePlateComponent implements OnInit {
 goBack(){
   this.router.navigateByUrl("queries")
 }
+
 }

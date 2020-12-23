@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { catchError, flatMap, take } from 'rxjs/operators';
+import { catchError, flatMap, take,tap } from 'rxjs/operators';
 import { HttpUtils } from '../../shared/support/http.utils';
 import { ErrorUtils } from '../../shared/support/error.utils';
 import { Security } from '../../shared/model/security.model';

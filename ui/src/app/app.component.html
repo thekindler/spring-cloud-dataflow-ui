@@ -20,18 +20,33 @@
           </a>
         </div>
 
-        <div *ngIf="(loggedinUser$|async) as user" class="header-actions">
+        <!-- <div *ngIf="(loggedinUser$|async) as user" class="header-actions">
           <clr-dropdown>
-            <button class="nav-text nav-icon-text" clrDropdownTrigger aria-label="open user profile">
+            <button class="nav-text nav-icon-text"  aria-label="open user profile" clrDropdownTrigger>
               {{user}}
               <clr-icon shape="caret down"></clr-icon>
             </button>
-            <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+            <clr-dropdown-menu  clrPosition="bottom-right" *clrIfOpen>
+              <div aria-label="Dropdown header Action 1" clrDropdownItem>Action 1</div>
               <a href="/logout" clrDropdownItem>Log out</a>
             </clr-dropdown-menu>
           </clr-dropdown>
+        </div> -->
+     
+        <div *ngIf="(loggedinUser$|async) as user" class="header-actions">
+          <button class="nav-text nav-icon-text" [matMenuTriggerFor]="menu" aria-label="open user profile">
+            {{user |titlecase}} <mat-icon>keyboard_arrow_down</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>exit_to_app</mat-icon>
+              <a href="/logout">Log out</a>
+            </button>
+          </mat-menu>
         </div>
       </div>
+      
+      
 
       <span class="divider" *ngIf="securityEnabled|async"></span>
       <app-about-signpost></app-about-signpost>

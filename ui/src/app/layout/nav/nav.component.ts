@@ -27,7 +27,7 @@ export class NavComponent implements OnInit {
     console.log(this.isAdminOrConfiguator())
     console.log(this.isAdminOrDashboardMonitor())
     console.log(this.isAdmin())
-
+    
   }
 
   isAdminOrConfiguator():Boolean{
