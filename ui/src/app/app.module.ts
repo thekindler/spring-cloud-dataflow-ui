@@ -37,6 +37,14 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
+import { LayoutViewComponent } from './layout-view/layout-view.component';
+import { ChartComponent } from './layout-view/chart/chart.component';
+import { DragCardComponent } from './layout-view/drag-card/drag-card.component';
+import { TableComponent } from './layout-view/table/table.component';
+import {MatTableModule} from '@angular/material/table';
+import { GraphPopupComponent } from './layout-view/drag-card/graph-popup/graph-popup.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -44,7 +52,12 @@ import {MatMenuModule} from '@angular/material/menu';
   declarations: [
     AppComponent,
     QueriesComponent,
-    LicencePlateComponent
+    LicencePlateComponent,
+    LayoutViewComponent,
+    ChartComponent,
+    DragCardComponent,
+    TableComponent,
+    GraphPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +67,8 @@ import {MatMenuModule} from '@angular/material/menu';
     ClarityModule,
     BrowserAnimationsModule,
     MatSelectModule,
+    MatDialogModule,
+    MatPaginatorModule,
     MatInputModule,
     MatButtonModule,
     MatFormFieldModule,
@@ -72,6 +87,7 @@ import {MatMenuModule} from '@angular/material/menu';
     ManageModule,
     SecurityModule,
     SettingsModule,
+    MatTableModule,
     AppsModule,
     StoreModule.forRoot(ROOT_REDUCERS, {
       metaReducers,

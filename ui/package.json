@@ -43,6 +43,7 @@
     "angular-2-local-storage": "^3.0.2",
     "angular-material": "^1.2.1",
     "bootstrap": "^4.5.3",
+    "chart.js": "^2.9.4",
     "file-saver": "2.0.2",
     "lodash.get": "4.4.2",
     "lodash.set": "4.3.2",

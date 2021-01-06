@@ -6,6 +6,7 @@ import { DashboardComponent } from '../app/dashboard/dashboard/dashboard.compone
 import { QueriesComponent } from './queries/queries.component';
 import { FeedComponent } from './feed/feed.component'
 import { LicencePlateComponent } from './licence-plate/licence-plate.component';
+import { LayoutViewComponent } from './layout-view/layout-view.component';
 
 
 
@@ -41,6 +42,10 @@ const routes: Routes = [
      {
        path:"licence-plate",
        component:LicencePlateComponent
+     },
+     {
+       path:"layout-view",
+       component:LayoutViewComponent
      }
 ];
 @NgModule({
