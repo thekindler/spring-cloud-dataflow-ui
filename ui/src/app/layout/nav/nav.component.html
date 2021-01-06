@@ -40,6 +40,46 @@
     </a>
    </div>
 
+   <clr-vertical-nav-group routerLinkActive="active"
+                          clrVerticalNavGroupExpanded="true"
+                          [appRole]="[]">
+    <clr-icon shape="settings" clrVerticalNavIcon></clr-icon>
+    <span class="font-size-smaller" > Settings </span>
+    
+    <clr-vertical-nav-group-children>
+      <div *ngIf="isAdmin()">
+        <a
+          clrVerticalNavLink
+         >
+          <span class="font-size-smaller"> Camera </span>
+        </a>
+      </div>
+      <div *ngIf="isAdmin()">
+        <a
+          clrVerticalNavLink
+          >
+          <span class="font-size-smaller"> Notification </span>
+        </a>
+      </div>
+        <div *ngIf="isAdmin()">
+          <a
+            clrVerticalNavLink
+            routerLinkActive="active"
+            routerLink="layout"
+            >
+            <span class="font-size-smaller"> Layout </span>
+          </a>
+        </div>
+        <div *ngIf="isAdmin()">
+          <a
+            clrVerticalNavLink
+            >
+            <span class="font-size-smaller"> Users </span>
+          </a>
+        </div>
+    </clr-vertical-nav-group-children>
+  </clr-vertical-nav-group>
+
   <!-- <clr-vertical-nav-group routerLinkActive="active" clrVerticalNavGroupExpanded="true"
                           [appRole]="[]" appFeature="tasks">
     <clr-icon shape="blocks-group" clrVerticalNavIcon></clr-icon>

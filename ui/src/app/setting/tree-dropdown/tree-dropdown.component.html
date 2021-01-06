@@ -1,0 +1,49 @@
+<div class="example-container" >
+    <form >
+        <mat-form-field appearance="outline">
+        <mat-label>Layout Name</mat-label>
+        <input matInput>
+    </mat-form-field><br>
+      &nbsp;&nbsp;&nbsp;
+      <h5>Camera Selection</h5>
+      <mat-form-field appearance="outline">
+            <mat-label>Country</mat-label>
+            <mat-select (selectionChange)="onCountryChange($event)" >
+              <mat-option>--</mat-option>
+              <mat-option  *ngFor="let country of  countries" [value]="country.countryName">
+                {{country.countryName}}
+              </mat-option>
+              
+            </mat-select>
+      </mat-form-field>
+    
+      &nbsp;&nbsp;&nbsp;<mat-form-field appearance="outline">
+          <mat-label>State</mat-label>
+          <mat-select (selectionChange)="onStateChange($event)" >
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let state of  states1" [value]="state">
+              {{ state}}
+            </mat-option>
+            
+          </mat-select>
+    </mat-form-field>
+  
+    &nbsp;&nbsp;&nbsp;<mat-form-field appearance="outline">
+      <mat-label>City</mat-label>
+      <mat-select #selected  (selectionChange)="onCityChange($event);name=selected.value" >
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let city of  city1" [value]="city">
+          {{city}}
+        </mat-option>
+        
+      </mat-select>
+  </mat-form-field>
+  <div *ngIf="countryBool && cityBool && stateBool">
+    <app-chips [selectedCity]="name"></app-chips>
+  </div>
+  
+
+ 
+  </form>
+  
+</div>

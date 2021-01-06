@@ -8,10 +8,12 @@ import { NavComponent } from './nav/nav.component';
 import { LogoComponent } from './logo/logo.component';
 import { SecurityModule } from '../security/security.module';
 
+
 @NgModule({
   declarations: [
     LogoComponent,
-    NavComponent
+    NavComponent,
+   
   ],
   imports: [
     RouterModule,

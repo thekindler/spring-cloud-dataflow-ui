@@ -4,6 +4,8 @@ import { DevGuard } from './shared/support/dev.guard';
 import { SecurityGuard } from '../app/security/support/security.guard';
 import { DashboardComponent } from '../app/dashboard/dashboard/dashboard.component'
 import { QueriesComponent } from './queries/queries.component';
+
+import { SettingComponent } from './setting/setting.component'
 import { FeedComponent } from './feed/feed.component'
 
 
@@ -32,9 +34,15 @@ const routes: Routes = [
         roles: ['ROLE_VIEW']
      }
     },
+   
     { 
        path:"feed",
        component:FeedComponent,
+       pathMatch:"full"
+     },
+     { 
+       path:"layout",
+       component:SettingComponent,
        pathMatch:"full"
      }
 ];

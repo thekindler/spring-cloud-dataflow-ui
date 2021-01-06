@@ -1,0 +1,27 @@
+<mat-form-field class="example-chip-list">
+    <mat-label>Camera Id</mat-label>
+    
+    <mat-chip-list #chipList aria-label="Fruit selection">
+      <mat-chip
+        *ngFor="let camera of cameras"
+        [selectable]="selectable"
+        [removable]="removable"
+        (removed)="remove(camera)">
+        {{camera}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input
+        placeholder="New camera..."
+        #cameraInput
+        [formControl]="cameraCtrl"
+        [matAutocomplete]="auto"
+        [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        (matChipInputTokenEnd)="add($event)">
+    </mat-chip-list>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+      <mat-option *ngFor="let camera of filteredCameras | async" [value]="camera">
+        {{camera}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
