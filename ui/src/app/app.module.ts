@@ -41,7 +41,19 @@ import { TreeDropdownComponent } from './setting/tree-dropdown/tree-dropdown.com
 import { ChipsComponent } from './setting/tree-dropdown/chips/chips.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { LicencePlateComponent } from './licence-plate/licence-plate.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
+import {MatMenuModule} from '@angular/material/menu';
+import { LayoutViewComponent } from './layout-view/layout-view.component';
+import { ChartComponent } from './layout-view/chart/chart.component';
+import { DragCardComponent } from './layout-view/drag-card/drag-card.component';
+import { TableComponent } from './layout-view/table/table.component';
+
+import { GraphPopupComponent } from './layout-view/drag-card/graph-popup/graph-popup.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -52,8 +64,13 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     QueriesComponent,
     SettingComponent,
     TreeDropdownComponent,
-    ChipsComponent
-   
+    ChipsComponent,
+     LicencePlateComponent,
+    LayoutViewComponent,
+    ChartComponent,
+    DragCardComponent,
+    TableComponent,
+    GraphPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +80,15 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     ClarityModule,
     BrowserAnimationsModule,
     MatSelectModule,
+    MatDialogModule,
+    MatPaginatorModule,
     MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatIconModule,
+    MatMenuModule,
     SharedModule,
     AboutModule,
     HttpClientModule,

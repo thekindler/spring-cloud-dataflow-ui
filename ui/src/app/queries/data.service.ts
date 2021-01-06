@@ -13,7 +13,7 @@ export class DataService {
    }
    getData():Observable<any>{
     
-    return this.http.get<any>("../assets/data.json").pipe(tap(data=>console.log(data)))
+    return this.http.get<any>("../assets/ai_services_list.json").pipe(tap(data=>console.log(data)))
    }
   
 }

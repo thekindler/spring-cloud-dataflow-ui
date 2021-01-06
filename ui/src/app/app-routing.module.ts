@@ -7,6 +7,8 @@ import { QueriesComponent } from './queries/queries.component';
 
 import { SettingComponent } from './setting/setting.component'
 import { FeedComponent } from './feed/feed.component'
+import { LicencePlateComponent } from './licence-plate/licence-plate.component';
+import { LayoutViewComponent } from './layout-view/layout-view.component';
 
 
 
@@ -44,6 +46,14 @@ const routes: Routes = [
        path:"layout",
        component:SettingComponent,
        pathMatch:"full"
+     },
+     {
+       path:"licence-plate",
+       component:LicencePlateComponent
+     },
+     {
+       path:"layout-view",
+       component:LayoutViewComponent
      }
 ];
 @NgModule({

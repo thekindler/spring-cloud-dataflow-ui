@@ -1,0 +1,91 @@
+<ng-template [ngIf]="card.content.type == 'table'">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>settings</mat-icon>hello
+    </button>
+    <mat-menu #menu="matMenu">
+        <div fxLayout="row">
+          <div fxLayout="column" (click)="$event.stopPropagation();">
+            <mat-form-field>
+              <input [(ngModel)]="card.rows" type="number" matInput (change)="updateRows()" placeholder="Grid Rows" >
+              
+            </mat-form-field>
+          </div>
+          <div fxLayout="column" (click)="$event.stopPropagation();">
+            <mat-form-field>
+              <input [(ngModel)]="card.cols" type="number" matInput (change)="updateRows()" placeholder="Grid Cols">
+              
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-menu>
+    <app-table></app-table>
+  </ng-template>
+  
+  <style>
+    .block-header {
+      display: inline-block;
+      width: 80%;
+      text-align: center;
+    }
+    .block-header-button {
+      display: inline-block;
+      width: 20%;
+    }
+  </style>
+  
+  <ng-template [ngIf]="card.content.type != 'table'">
+    <mat-card class="dashboard-card" ng-if="card">
+       <mat-card-header>
+        <!-- <div class="block-header"> -->
+            <mat-card-title>
+                <span style="text-align:center;color: aliceblue;">{{card.title}}</span>
+            
+        <!-- </div> -->
+        <!-- <div class="block-header-button"> -->
+        
+        </mat-card-title>
+          <mat-menu #menu="matMenu">
+            <div fxLayout="row">
+              <div fxLayout="column" (click)="$event.stopPropagation();">
+                <mat-form-field>
+                  <input [(ngModel)]="card.rows" type="number" matInput  (change)="updateRows()" placeholder="Grid Size">
+                </mat-form-field>
+              </div>
+              <!-- <div fxLayout="column" (click)="$event.stopPropagation();">
+                <mat-form-field>
+                  <input [(ngModel)]="card.cols" type="number" matInput  (change)="updateRows()" placeholder="Grid Cols">
+                </mat-form-field>
+              </div> -->
+            </div>
+          </mat-menu>
+        <!-- </div> -->
+    </mat-card-header>
+   <!-- <div style="color:aqua">{{card.title}} </div>   -->
+        <img mat-card-image class="cardimg" [src]="card.image" alt="Photo from Camera">
+        <div class="bottom-right"> 
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon style="font-size: medium;">settings</mat-icon>
+              </button>
+              <button  mat-button (click)="openDialog()"><mat-icon>equalizer</mat-icon></button>
+        </div>
+      <mat-card-content class="dashboard-card-content">
+        <div *ngIf="card.content">
+          <div *ngIf="card.content.type == 'chart'">
+            <app-chart [card]="card"></app-chart>
+          </div>
+          <!-- <div *ngIf="card.content.type == 'text'">
+            {{card.data.text}}
+          </div> -->
+        </div>
+       
+      </mat-card-content>
+     
+      
+      <!-- <mat-card-actions>
+        <mat-icon>equalizer</mat-icon>
+      </mat-card-actions> -->
+      
+    </mat-card>
+  </ng-template>
+ 
+  

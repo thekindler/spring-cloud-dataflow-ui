@@ -1,0 +1,23 @@
+<mat-grid-list style="overflow:hidden" cols="{{numberOfColumns}}" rowHeight="{{rowHeight}}px" [gutterSize]="'15px'">
+  
+    <mat-grid-tile
+      *ngFor="let card of data"
+      [@rotation]="{value: card.rotate, params: {rotate: card.rotate}}"
+      [@dragElement]="{value: card.state, params: { x: card.params.x, y: card.params.y, left: card.params.left, top: card.params.top, duration: dragDuration}}"
+      (mousemove)="onMouseMoveGrid(card, $event)"
+      (mousedown)="onMouseDownTile(card)"
+      [colspan]="card.cols"
+      [rowspan]="card.rows">
+      <!-- {{card.rowNumber}} -->
+      <app-drag-card [card]="card" [changed]="card.toggleDragged" (sizeChanged)="updateRowNumbers()" (drop)="onTileDrop($event)"></app-drag-card>
+    </mat-grid-tile>
+    
+  
+  </mat-grid-list>
+  <mat-paginator [length]="cards.length"
+                [pageSize]="size"
+                [pageIndex]="page"
+                [pageSizeOptions]="[4, 8, 12]"
+                (page)="getData($event)">
+  </mat-paginator>
+  
